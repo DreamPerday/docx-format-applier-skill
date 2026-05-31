@@ -1,6 +1,6 @@
-# DOCX Format Applier Skill
+# DOCX Format Applier
 
-Trae CN 技能：一键修正 DOCX 文档格式，支持毕业论文排版。
+一键修正 DOCX 文档格式，支持从模板自动提取页面设置、样式定义和页眉格式，特别适用于毕业论文排版。
 
 ## 功能
 
@@ -17,25 +17,41 @@ Trae CN 技能：一键修正 DOCX 文档格式，支持毕业论文排版。
 
 ## 使用方式
 
-### 在 Trae CN 中直接调用
+### 1. 安装依赖
 
-本技能已上传至 GitHub，可导入 Trae CN 直接使用。在对话中描述格式修正需求，技能描述会自动匹配并调用。
+- .NET SDK 8.0+
+- Python 3.8+
 
-### 手动运行 C# 程序
+### 2. 创建 C# 项目
 
-1. 安装 .NET SDK 8.0+ 和 Python 3.8+
-2. 从 `SKILL.md` 中复制 `FormatFix.csproj` 和 `Program.cs` 代码
-3. 在项目目录执行：
+创建 `FormatFix.csproj`：
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.2.0" />
+  </ItemGroup>
+</Project>
+```
+
+### 3. 编写修正代码
+
+参考 `SKILL.md` 中的 C# 代码示例，将需要的功能代码写入 `Program.cs`。
+
+### 4. 运行
 
 ```powershell
 dotnet restore
 dotnet run
 ```
 
-### 作为 Trae CN 技能安装
-
-1. 将 `SKILL.md` 放入 `.trae/skills/docx-format-applier/` 目录
-2. Trae CN 会自动识别并加载该技能
+完整代码示例和详细说明见 [SKILL.md](SKILL.md)。
 
 ## 依赖
 
