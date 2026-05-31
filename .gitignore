@@ -1,0 +1,12 @@
+# Build artifacts
+FormatFix5/bin/
+FormatFix5/obj/
+*.dll
+*.exe
+*.pdb
+*.runtimeconfig.json
+*.deps.json
+
+# OS files
+Thumbs.db
+.DS_Store
